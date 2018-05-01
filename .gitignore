@@ -103,3 +103,9 @@ ENV/
 # Credentials
 credentials.json
 client_secret.json
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
