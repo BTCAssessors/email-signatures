@@ -1,0 +1,27 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: https://signatures.btcassessors.com
+title: BTC Assessors | Email signatures
+domain: btcassessors.com
+email: info@BTCAssessors.com
+email_name: BTC%20Assessors
+email_subject: BTC%20Assessors%20|%20Website
+author: davidlj95
+description: >
+  BTC Assessors email signatures site
+copyright: 'Copyright &copy; 2018 BTC Assessors. All Rights Reserved.'
+credits: > # "Credits
+  Credits: <a href="https://github.com/davidlj95" target="_blank">davidlj95</a>
+repository: ccebrecos/btca-mailsignatures
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+- jekyll-email-protect
