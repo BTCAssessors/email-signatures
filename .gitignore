@@ -103,6 +103,7 @@ ENV/
 # Credentials
 credentials.json
 client_secret.json
+service_account.json
 
 # Jekyll
 _site/

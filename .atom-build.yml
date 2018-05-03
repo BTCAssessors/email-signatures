@@ -1,0 +1,4 @@
+cmd: "python"
+name: "Update signatures"
+args:
+  - update_signatures.py
