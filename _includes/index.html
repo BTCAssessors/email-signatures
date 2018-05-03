@@ -1,0 +1,41 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <h3>{{ site.title }}</h3>
+    <p>Within this little website, you can get your email signature in
+       order to set it in your third-party email client. You can either copy
+       and paste it or download its HTML source code.</p>
+    <p>If you use the default,
+      <a href="https://mail.google.com" target="_blank">Gmail web client</a>,
+      we will set the signatures for you, don't worry</p>
+
+    <p>Signatures for mobile email clients (even Gmail) can't be set in any way
+      because of technical limitations. The confidentiality disclaimer will
+      always be sent, though</p>
+  </header>
+  <main>
+  {% for user in site.data.users %}
+    <div class="user-signatures mb-4">
+      <!-- Initial assignment block -->
+      {% assign email = user[0] %}
+      {% assign userId = email | replace: '@', '' | replace: site.domain, '' %}
+      <!-- Reassignment block -->
+      {% assign name = user[1].name %}
+      {% assign phone = user[1].phone %}
+      {% assign position = user[1].position %}
+      <h2>{{ name }}</h2>
+      <iframe srcdoc='{% include signature.html %}'
+        onload="resizeIframe(this);
+        create_signature_download_link('{{ userId }}', '{{ email }}', 'Download as HTML', 'btn btn-primary')"
+              scrolling="no" id="{{ userId }}" >
+      </iframe>
+      <br/>
+    </div>
+  {% endfor %}
+  </main>
+  <footer class="mt-auto">
+  {{ site.copyright }}<br>
+  In order to update the signature template and / or this site, check its
+  <a href="https://github.com/{{ site.repository }}" target="_blank">GitHub
+    repository</a>
+  </footer>
+</div>

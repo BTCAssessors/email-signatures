@@ -17,9 +17,13 @@ USERS_FILE = "users.json"
 """
     str: path to the users' information file
 """
-SIGNATURE_FILE = "20180430.html"
+SIGNATURE_FOLDER = "_includes"
 """
-    str: path to the signature template in HTML
+    str: path to the folder where the signature is located
+"""
+SIGNATURE_FILE = "signature.html"
+"""
+    str: name of the signature template in HTML
 """
 SCOPES = ['https://www.googleapis.com/auth/gmail.settings.basic',
           'https://www.googleapis.com/auth/gmail.settings.sharing']
@@ -45,7 +49,8 @@ users = json.load(open(USERS_FILE))
 # 2. Load signature HTML template
 # # Load environment
 env = Environment(
-    loader=FileSystemLoader(os.path.join(os.path.dirname(__file__))),
+    loader=FileSystemLoader(os.path.join(
+        os.path.dirname(__file__), SIGNATURE_FOLDER)),
     autoescape=select_autoescape(['html'])
 )
 
