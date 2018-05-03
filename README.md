@@ -70,6 +70,8 @@ Please also check that the variables in the `_config.yml` file are correct.
 
 > Be sure to specify the correct `domain` variable (that must be equal to the users' emails domain) in order to generate valid _ids_ to the DOM elements.
 
+> Because the template is inserted as an _iframe_ using the attribute _srcdoc_, please just use double quotes in the template file or the _srcdoc_ attribute will be broken and _iframes_ won't display properly
+
 **<> with ♥ in [BTC Assessors](https://www.btcassessors.com), Andorra by [@ccebrecos](https://github.com/ccebrecos) & [@davidlj95](https://github.com/davidlj95)**
 
 
