@@ -110,3 +110,6 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Project specific
+users.json
