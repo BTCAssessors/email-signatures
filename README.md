@@ -6,6 +6,7 @@ This repository is intended to provide the tools to mass-update the email signat
 Allows to specify the users to update and their signature information
 
 The format of the `users.json` file is a key / value map where the user's email is the key and the values to set in their signature are the values.
+You have a sample in `users.sample.json`
 
 The values to set in their signature are specified as a key / value map where the key is the name of the variable in the signature file and the value is the value to set for this user in that variable.
 
