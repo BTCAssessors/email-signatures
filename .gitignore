@@ -112,7 +112,8 @@ _site/
 
 # Project specific
 ## Users
-users.json
+/users.json
+/users*.json
 ## Credentials
 credentials*.json
 client_secret*.json
