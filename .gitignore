@@ -100,10 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-# Credentials
-credentials.json
-client_secret.json
-service_account.json
 
 # Jekyll
 _site/
@@ -115,4 +111,9 @@ _site/
 .idea
 
 # Project specific
+## Users
 users.json
+## Credentials
+credentials*.json
+client_secret*.json
+service_account*.json
