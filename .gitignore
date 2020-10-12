@@ -111,5 +111,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+# PyCharm
+.idea
+
 # Project specific
 users.json
