@@ -9,7 +9,7 @@ import logging
 # # # Signature template rendering
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 # # # Google APIs
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
 # Constants
@@ -61,19 +61,20 @@ template = env.get_template(SIGNATURE_FILE)
 # 3. Prepare Google APIs
 logging.info("Creating Google credentials object from file \"%s\"" %
              SERVICE_ACCOUNT_FILE)
-credentials = service_account.Credentials.from_service_account_file(
+service_credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
 # 4. Loop each user
 logging.info("All ready, will start applying signatures")
-for user, user_info in users.iteritems():
+for user, user_info in users.items():
     logging.info("--- %s ---" % user)
 
     # Create delegated credentials
-    delegated_credentials = credentials.with_subject(user)
+    delegated_credentials = service_credentials.with_subject(user)
 
     # Create service
-    service = build('gmail', 'v1', credentials=delegated_credentials)
+    # `cache_discovery=False` due to https://stackoverflow.com/a/44518587/3263250
+    service = build('gmail', 'v1', credentials=delegated_credentials, cache_discovery=False)
 
     # Render signature based on template
     signature = template.render(user_info)

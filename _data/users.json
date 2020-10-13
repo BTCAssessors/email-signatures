@@ -1,0 +1,7 @@
+{   
+    "user@example.com":{
+        "name":"John Doe",
+        "position":"CEO",
+        "phone":"911"
+    }
+}
